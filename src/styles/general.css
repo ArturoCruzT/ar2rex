@@ -1,0 +1,68 @@
+.form-control {
+  border: 1px solid #A2A2A2;
+}
+
+.table-condensed > tbody > tr > th,
+.table-condensed > tbody > tr > td,
+.table-condensed > thead > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tfoot > tr > th,
+.table-condensed > tfoot > tr > td,
+.table-condensed > tr > td,
+.table-condensed > tr > th {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.flotante-izquierdo {
+  bottom: 15px;
+  left: 10px;
+}
+
+.flotante-derecho {
+  bottom: 15px;
+  right: 10px;
+}
+
+.avatar {
+  width: 1rem;
+}
+
+.font-small {
+  font-size: small;
+}
+
+.hvrs_blue:hover {
+  box-shadow: 5px 10px 18px #4fc3f7;
+}
+
+.hvrs_blue:active {
+  box-shadow: 5px 10px 18px #eeff41;
+}
+
+.th-estatico {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.text-checklist {
+  font-size: 4rem;
+}
+
+.label-checklist {
+  font-size: 3rem;
+}
+
+.txts_gray {
+  text-shadow: 2px 2px 8px #d2d4d4;
+}
+
+
+/* ------Uploader------ */
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; }
