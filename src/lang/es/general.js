@@ -1,5 +1,5 @@
 export const general = {
-    bienvenido: "Bienvenido al WFPedidos",
+    bienvenido: "Bienvenido a Mi Perfil Digital",
     adjuntos: "Adjuntos",
     cargando: "Cargando...",
     comentarios: "Comentarios",

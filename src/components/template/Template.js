@@ -5,10 +5,15 @@ import Footer from "./Footer";
 function Template(props) {
     return (
         <div>
-            <Navbar lang={props.lang}
-                    lang_ok={props.lang_ok}/>
+            <div className="navbar">
+                <Navbar lang={props.lang}
+                        lang_ok={props.lang_ok}/>
+            </div>
             {props.children}
-            <Footer/>
+            <div className={'footer'}>
+                <Footer/>
+            </div>
+
         </div>
     );
 }

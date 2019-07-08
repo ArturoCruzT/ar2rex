@@ -26,6 +26,11 @@ function Navbar({lang,  lang_ok}) {
                         <NavLink to="/inicio" className="nav-link" href="#"><span
                             className="sr-only">(current)</span></NavLink>
                     </li>
+                    <li className="nav-item ">
+                        <NavLink to="/experiencia-laboral" href="#">
+                            {lang.get('navbar.expLab')}
+                        </NavLink>
+                    </li>
                 </ul>
                 <ul className="navbar-nav navbar-right">
                   <li className="nav-item">
