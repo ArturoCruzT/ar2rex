@@ -2,13 +2,15 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import { DiReact } from "react-icons/di";
+import { GoHome } from "react-icons/go";
+import { IoIosCode } from "react-icons/io";
 
 function Navbar({lang,  lang_ok}) {
 
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-0">
-            <a className="navbar-brand " href="#">
+            <a  className="navbar-brand " href="#">
                 <span className={'text-info '}>  <DiReact size={35}/> </span>
                 {` ${process.env.REACT_APP_APP_NAME}`}
                 <Env env={process.env.REACT_APP_ENV}/>
@@ -22,13 +24,14 @@ function Navbar({lang,  lang_ok}) {
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                        <NavLink to="/inicio" className="nav-link" href="#"><span
-                            className="sr-only">(current)</span></NavLink>
+                    <li className="nav-item mr-2 ">
+                        <NavLink to="/" href="#" className="text-white">
+                         <GoHome/>   {lang.get('navbar.home')}
+                        </NavLink>
                     </li>
                     <li className="nav-item ">
-                        <NavLink to="/experiencia-laboral" href="#">
-                            {lang.get('navbar.expLab')}
+                        <NavLink to="/experiencia-laboral" href="#" className="text-white">
+                          <IoIosCode/>  {lang.get('navbar.expLab')}
                         </NavLink>
                     </li>
                 </ul>
