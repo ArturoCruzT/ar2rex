@@ -2,10 +2,12 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Home from "./components/template/Home";
 import ExpLaboral from "./components/laboral/ExpLaboral";
+import Estudios from "./components/educacion/Estudios";
 
 const ROUTES = [
     { exact: true, path: '/', component: Home },
     { exact: true, path: '/experiencia-laboral', component: ExpLaboral },
+    { exact: true, path: '/educacion', component: Estudios },
     { exact: true, path: '/404', component: NotFound }
 ];
 

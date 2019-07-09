@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import * as langIndex from "../../lang";
 import Template from "./../template/Template";
-import {Container, Card, CardImg} from "react-bootstrap";
+import {Container, Card, CardImg, CardColumns} from "react-bootstrap";
 import { GoPrimitiveDot } from "react-icons/go";
 import {Trabajos} from "../../models/trabajos";
 
@@ -33,14 +33,15 @@ const ExpLaboral = () => {
 
 function InfoLaboral({lang, lang_ok, trabajos}) {
     return(
-      <div className="d-flex justify-content-between flex-wrap">
+      <div className="d-flex justify-content-between flex-wrap box">
+          <CardColumns>
           {
               (trabajos).map(( trabajo) =>
                   <CardLaboral lang={lang} lang_ok={lang_ok} trabajo={trabajo}/>
 
               )
           }
-
+          </CardColumns>
       </div>
     );
 }
@@ -48,21 +49,25 @@ function InfoLaboral({lang, lang_ok, trabajos}) {
 function CardLaboral({lang, lang_ok, trabajo}) {
 
     return(
-      <Card className="border-primary  mr-2 mb-2 " style={{width:'45%'}} >
+      <Card className="border-primary  mr-2 mb-2 " >
           <Card.Header className="border-primary">
               <h3>{trabajo.puesto}</h3>
           </Card.Header>
           <Card.Body className="d-flex justify-content-beetewn flex-column p-0 ">
-            <CardImg src="/img/work-731198_1920.jpg"/>
+            <CardImg src={"/img/"+ trabajo.img}/>
                 <Card.Title className="bg-primary text-center">
                     {trabajo.empresa}
                 </Card.Title>
               <Card.Text className="p-2">
                   {
-                 (trabajo.actividades).map( actividad => <p>   <GoPrimitiveDot /> {actividad.descripcion}</p>)
+                 (trabajo.actividades).map( actividad =>
+                  <div>
+                      <p> <GoPrimitiveDot />  {actividad.descripcion}</p>
+                  </div>
+                 )
                   }
               </Card.Text>
-              <Card.Footer className="text-center">
+              <Card.Footer className="text-center" >
                   {trabajo.periodo}
               </Card.Footer>
           </Card.Body>
