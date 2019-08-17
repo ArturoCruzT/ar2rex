@@ -39,6 +39,11 @@ function Navbar({lang,  lang_ok}) {
                           <IoIosSchool/>  {lang.get('navbar.educacion')}
                         </NavLink>
                     </li>
+                    <li className="nav-item mr-3">
+                        <NavLink to="/cv" href="#" className="text-white">
+                          <IoIosSchool/>  {lang.get('navbar.cv')}
+                        </NavLink>
+                    </li>
                 </ul>
                 <ul className="navbar-nav navbar-right">
                   <li className="nav-item">

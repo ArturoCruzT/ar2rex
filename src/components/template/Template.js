@@ -10,7 +10,7 @@ function Template(props) {
                         lang_ok={props.lang_ok}/>
             </div>
             {props.children}
-            <div className={'footer'}>
+            <div className="footer d-print-none">
                 <Footer/>
             </div>
 
