@@ -1,7 +1,7 @@
 export const Trabajos = [
     {
-        empresa: 'Saparsa',
-        puesto: 'Full stack',
+        empresa: 'Saparsa S.A de C.V',
+        puesto: 'Full Stack Developer',
         periodo: 'Marzo 2019 - Actualidad',
         ubicacion:'Lerma, Edo Méx',
         img: 'laptop-2588606_1920.jpg',
