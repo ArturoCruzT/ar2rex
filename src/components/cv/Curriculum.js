@@ -9,9 +9,14 @@ import {IoIosMail} from "react-icons/io";
 import {Habilidades} from "../../models/Habilidades";
 import {Trabajos} from "../../models/trabajos";
 import {Instituciones} from "../../models/educacion";
+import {Info_es} from "../../models/Info";
+import Encabezado from "./Encabezado";
+import Cintillo from "./Cintillo";
+import InfoPersonal from "./InfoPersonal";
 
 
 const Curriculum = () => {
+	const [info, setInfo] = useState({});
 	const [lang, setLang] = useState({get: (key) => key});
 	const [lang_ok, setLangOk] = useState(false);
 	
@@ -19,9 +24,12 @@ const Curriculum = () => {
 		langIndex.cargarLang((result) => {
 			setLang(langIndex);
 			setLangOk(true);
+			seleccionaInfo()
 		});
 	}
-	
+	const seleccionaInfo = () => {
+		setInfo(Info_es);
+	};
 	return (
 		<Template lang={lang}
 				  lang_ok={lang_ok}
@@ -29,18 +37,12 @@ const Curriculum = () => {
 			<div className="pb-5">
 				<div className=" py-5 pb-5">
 					<div className="d-flex justify-content-between">
-						<div style={{width: '3%', backgroundImage: `url(${leftImg})`}} className="orange darken-4">
-						
-						</div>
+						<Cintillo imagen={leftImg} tamaño={'3%'}/>
 						<div style={{width: '97%'}}>
-							<Encabezado/>
+							<Encabezado info={info} foto={arturo} Background={Background}/>
 							<div className="d-flex justify-content-between">
-								<div className="pr-3" style={{
-									backgroundImage: `url(${Background})`,
-									width: '35%',
-									'border-right': "5px solid #ff6f00"
-								}}>
-									<LeftPersonal/>
+								<div className="pr-3" style={{width: '38%'}}>
+									<InfoPersonal info={info} Background={Background}/>
 								</div>
 								<div className="pt-5" style={{width: '60%'}}>
 									<div className="text-center" style={{'border-bottom': '5px solid #0d47a1'}}>
@@ -81,113 +83,6 @@ const Curriculum = () => {
 	);
 };
 
-
-const Encabezado = () => {
-	return (
-		
-		<div className="d-flex justify-content-around py-3" style={{backgroundImage: `url(${Background})`}}>
-			<div>
-				<img src={arturo} className="d-block  rounded-circle" height={200} width={200}
-					 alt="First slide"/>
-			</div>
-			<div className="">
-				<div>
-					<h1 className="text-center"> I.S.C Arturo Cruz Torres </h1>
-				</div>
-				<div className="d-flex justify-content-between">
-					<div className="border-right border-dark pr-3">
-						<h3><strong> Software Delevolper </strong></h3>
-					</div>
-					<div>
-						<h3> IT </h3>
-					</div>
-				
-				
-				</div>
-			</div>
-		</div>
-	
-	)
-};
-
-
-const LeftPersonal = () => {
-	return (
-		<div>
-			<div className="text-center">
-				<h2 style={{'border-bottom': '5px solid #0d47a1'}}>
-					Contacto
-				</h2>
-			</div>
-			<RenglonPersonal
-				titulo="Telefono"
-				texto="  722-286-20-41"
-				icon={<FaMobileAlt size={20}/>}
-			/>
-			<RenglonPersonal
-				titulo="Direccíón"
-				texto="San Mateo Atenco, Estado de México"
-				icon={<FaHome size={20}/>}
-			/>
-			<RenglonPersonal
-				titulo="Email"
-				texto="isc.arturo.cruz@outlook.com"
-				icon={<IoIosMail
-					size={20}/>}
-			/>
-			<RenglonPersonal
-				titulo="Web"
-				texto="www.ar2rex.com"
-				icon={<FaChrome size={20}/>}
-			/>
-			<div className="text-center">
-				<h2 style={{'border-bottom': '5px solid #0d47a1'}}>
-					Skills
-				</h2>
-			</div>
-			{
-				Habilidades.map(habilidad =>
-					<div>
-						<RenglonPersonal
-							titulo={habilidad.nombre}
-							texto={habilidad.nivel}
-							icon={habilidad.icono}
-						/>
-					</div>
-				)
-			}
-			<div className="text-center">
-				<h2 style={{'border-bottom': '5px solid #0d47a1'}}>
-					Idioma
-				</h2>
-			</div>
-			<RenglonPersonal
-				titulo="Ingles"
-				texto="B1"
-				icon={<FaLanguage/>}
-			/>
-		</div>
-	)
-};
-
-const RenglonPersonal = ({titulo, texto, icon}) => {
-	return (
-		<div className="d-flex justify-content-between py-2">
-			<div className="px-2 ">
-				<div className="px-2 d-flex justify-content-start">
-					<div className="pr-2 ">
-						{icon}
-					</div>
-					
-					<h5 className="pt-1"><strong>{titulo} </strong></h5>
-				</div>
-			</div>
-			<div className="d-flex flex-wrap">
-				{texto}
-			</div>
-		</div>
-	)
-};
 
 const Trabajo = ({trabajo}) => {
 	return (

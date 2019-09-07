@@ -4,7 +4,7 @@ import ROUTES from './routes';
 
 function App() {
     return (
-        <Router basename={'/rutas'}>
+        <Router basename={'/art2rex'}>
             {ROUTES.map((route, i) => (
                 <Route key={route.path}
                        path={route.path}

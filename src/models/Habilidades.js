@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAngular, FaLaravel, FaReact, FaHtml5, FaBootstrap, FaJava}  from 'react-icons/fa';
+import { FaAngular, FaLaravel, FaReact, FaHtml5, FaBootstrap, FaGithub}  from 'react-icons/fa';
 import { IoLogoJavascript}  from 'react-icons/io';
 
 export const Habilidades = [
@@ -8,5 +8,6 @@ export const Habilidades = [
 	{nombre: 'Angular js', nivel: '80%' , icono: <FaAngular/>},
 	{nombre: 'React js', nivel:'80%',  icono: <FaReact/>},
 	{nombre: 'Html', nivel:'80%',  icono: <FaHtml5/>},
-	{nombre: 'Bootstrap', nivel:'80%',  icono: <FaBootstrap/>}
+	{nombre: 'Bootstrap', nivel:'80%',  icono: <FaBootstrap/>},
+	{nombre: 'GitHub', nivel:'80%',  icono: <FaGithub/>}
 ];
